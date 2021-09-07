@@ -1,7 +1,7 @@
 import * as React from "react";
 import { body } from "../css/theme.module.css";
 import Menus from "../components/menu";
-import { menu } from "../css/index.module.css";
+// import { menu } from "../css/index.module.css";
 
 const IndexPage = () => {
   return (
@@ -13,9 +13,9 @@ const IndexPage = () => {
     //   />
     //   <Navigator></Navigator>
     // </Layout>
-    <div className={menu}>
-      <Menus></Menus>
-    </div>
+    // <div className={menu}>
+    <Menus></Menus>
+    // </div>
   );
 };
 
