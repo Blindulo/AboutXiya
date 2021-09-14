@@ -4,9 +4,9 @@ import Navigator from "./navigator.js";
 const Menus = () => {
   return (
     <div>
-      <Navigator menu="Design" link="/about" />
-      <Navigator menu="Resume" link="/404" />
-      <Navigator menu="Animation" link="/hello" />
+      <Navigator menu="Design" link="/design" />
+      <Navigator menu="Resume" link="/resume" />
+      <Navigator menu="Animation" link="/" />
     </div>
   );
 };

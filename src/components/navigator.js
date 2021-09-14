@@ -1,7 +1,6 @@
 import * as React from "react";
 import { Link } from "gatsby";
 import { slider, links } from "../css/navigator.module.css";
-import { body } from "../css/theme.module.css";
 
 const Navigator = (props) => {
   return (

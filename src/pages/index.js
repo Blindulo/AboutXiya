@@ -1,20 +1,39 @@
 import * as React from "react";
-import { body } from "../css/theme.module.css";
-import Menus from "../components/menu";
-import { menu } from "../css/index.module.css";
+import { StaticImage } from "gatsby-plugin-image";
+import Layout from "../components/layout.js";
+import Footer from "../components/footer.js";
+import Academic1Bubble from "../components/bubbles/academic1.js";
+import Academic2Bubble from "../components/bubbles/academic2.js";
+import ExprienceBubble from "../components/bubbles/exprience.js";
+import Project1Bubble from "../components/bubbles/project1.js";
+import Project2Bubble from "../components/bubbles/project2.js";
+import Project3Bubble from "../components/bubbles/project3.js";
+import Walk from "../components/yyw/walk.js";
+import { witch, jar, window, footerDiv } from "../css/index.module.css";
 
 const IndexPage = () => {
   return (
-    // <Layout pageTitle="Home Page">
-    //   <p>I'm making this by following the Gatsby Tutorial.</p>
-    //   <StaticImage
-    //     alt="Clifford, a reddish-brown pitbull, posing on a couch and looking stoically at the camera"
-    //     src="https://pbs.twimg.com/media/E1oMV3QVgAIr1NT?format=jpg&name=large"
-    //   />
-    //   <Navigator></Navigator>
-    // </Layout>
-    <div className={menu}>
-      <Menus></Menus>
+    <div className={window}>
+      <Academic1Bubble></Academic1Bubble>
+      <Academic2Bubble></Academic2Bubble>
+      {/* <ExprienceBubble></ExprienceBubble>
+      <Project1Bubble></Project1Bubble>
+      <Project2Bubble></Project2Bubble>
+      <Project3Bubble></Project3Bubble> */}
+      <Layout>
+        <div className={witch}>
+          <StaticImage src="../images/witch.png" alt="a witch" />
+        </div>
+        <div className={jar}>
+          <StaticImage src="../images/jar.png" alt="a jar" />
+        </div>
+      </Layout>
+      <Walk></Walk>
+      <div className={footerDiv}>
+        <Footer>
+          <p>When Xiya was created...</p>
+        </Footer>
+      </div>
     </div>
   );
 };

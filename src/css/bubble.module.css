@@ -1,0 +1,157 @@
+.frontContent {
+  color: #ffffff;
+  font-size: 2vh;
+  word-wrap: break-word;
+  width: 250px;
+  z-index: 101;
+}
+
+.back {
+  font-size: 2vh;
+  color: #cccccc;
+}
+
+.backImage {
+  position: absolute;
+  text-align: center;
+  background-size: 100% 100%;
+  width: 300px;
+  height: 300px;
+  left: 50%;
+  z-index: 100;
+}
+
+.academic1 {
+  background-image: url("../images/bubble1.png");
+  animation: academic1 3.5s infinite;
+}
+
+.frontAcademic1 {
+  padding-top: 110px;
+  padding-left: 30px;
+}
+
+@keyframes academic1 {
+  0%,
+  100% {
+    transform: translate(-200%, 20%);
+  }
+  50% {
+    transform: translate(-200%, 25%);
+  }
+}
+
+.academic2 {
+  background-image: url("../images/bubble2.png");
+  animation: academic2 4s infinite;
+}
+.frontAcademic2 {
+  width: 200px;
+  padding-top: 80px;
+  padding-left: 45px;
+}
+
+@keyframes academic2 {
+  0%,
+  100% {
+    transform: translate(120%, 40%);
+  }
+  50% {
+    transform: translate(120%, 30%);
+  }
+}
+
+.exprience {
+  background-image: url("../images/bubble3.png");
+  animation: exprience 7s infinite;
+}
+
+.frontExprience {
+  padding-top: 120px;
+  padding-left: 30px;
+}
+
+@keyframes exprience {
+  0%,
+  100% {
+    transform: translate(-200%, 90%);
+  }
+  50% {
+    transform: translate(-200%, 60%);
+  }
+}
+
+.project1 {
+  background-image: url("../images/bubble4.png");
+  transform: translate(-250%, 50%);
+  animation: project1 4s infinite;
+}
+
+.frontProject1 {
+  padding-top: 120px;
+  padding-left: 20px;
+}
+
+@keyframes project1 {
+  0%,
+  100% {
+    transform: translate(-250%, 40%);
+  }
+  50% {
+    transform: translate(-250%, 50%);
+  }
+}
+
+.project2 {
+  background-image: url("../images/bubble5.png");
+  transform: translate(-70%, 20%);
+  animation: project2 5s infinite;
+}
+
+.frontProject2 {
+  font-size: 3vh;
+  padding-top: 90px;
+  padding-left: 30px;
+}
+
+@keyframes project2 {
+  0%,
+  100% {
+    transform: translate(-70%, 20%);
+  }
+  50% {
+    transform: translate(-70%, 30%);
+  }
+}
+
+.project3 {
+  background-image: url("../images/bubble6.png");
+  animation: project3 4s infinite;
+}
+
+.frontProject3 {
+  width: 200px;
+  padding-top: 100px;
+  padding-left: 60px;
+  /* animation: project3text 5s infinite; */
+}
+
+@keyframes project3 {
+  0%,
+  100% {
+    transform: translate(140%, 90%);
+  }
+  50% {
+    transform: translate(140%, 80%);
+  }
+}
+
+@keyframes project3text {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-15px);
+  }
+}
