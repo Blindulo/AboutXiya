@@ -1,5 +1,8 @@
 import * as React from "react";
+import Helmet from "react-helmet";
+
 import { StaticImage } from "gatsby-plugin-image";
+import Cover from "../components/cover.js";
 import Layout from "../components/layout.js";
 import Footer from "../components/footer.js";
 import Academic1Bubble from "../components/bubbles/academic1.js";
@@ -14,6 +17,7 @@ import { witch, jar, window, footerDiv } from "../css/index.module.css";
 const IndexPage = () => {
   return (
     <div className={window}>
+      {/* <Cover>When Xiya was created...</Cover> */}
       <Academic1Bubble></Academic1Bubble>
       <Academic2Bubble></Academic2Bubble>
       {/* <ExprienceBubble></ExprienceBubble>
@@ -21,6 +25,9 @@ const IndexPage = () => {
       <Project2Bubble></Project2Bubble>
       <Project3Bubble></Project3Bubble> */}
       <Layout>
+        <Helmet>
+          <script src="../../static/scripts/indexScript.js" />
+        </Helmet>
         <div className={witch}>
           <StaticImage src="../images/witch.png" alt="a witch" />
         </div>
@@ -31,7 +38,7 @@ const IndexPage = () => {
       <Walk></Walk>
       <div className={footerDiv}>
         <Footer>
-          <p>When Xiya was created...</p>
+          <p>footer</p>
         </Footer>
       </div>
     </div>
