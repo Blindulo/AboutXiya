@@ -1,7 +1,9 @@
 import * as React from "react";
 import Helmet from "react-helmet";
+import Draggable, { DraggableCore } from "react-draggable"; // Both at the same time
 
 import { StaticImage } from "gatsby-plugin-image";
+
 import Cover from "../components/cover.js";
 import Layout from "../components/layout.js";
 import Footer from "../components/footer.js";
@@ -12,13 +14,23 @@ import Project1Bubble from "../components/bubbles/project1.js";
 import Project2Bubble from "../components/bubbles/project2.js";
 import Project3Bubble from "../components/bubbles/project3.js";
 import Walk from "../components/yyw/walk.js";
-import { witch, jar, window, footerDiv } from "../css/index.module.css";
+import App from "../components/dragTest.js";
+import {
+  witch,
+  jar,
+  window,
+  footerDiv,
+  nonDisplay,
+} from "../css/index.module.css";
 
 const IndexPage = () => {
   return (
     <div className={window}>
-      {/* <Cover>When Xiya was created...</Cover> */}
-      <Academic1Bubble></Academic1Bubble>
+      {/* <App></App> */}
+      <Cover text="When Xiya was created..." class={nonDisplay}></Cover>
+      <Draggable>
+        <Academic1Bubble></Academic1Bubble>
+      </Draggable>
       <Academic2Bubble></Academic2Bubble>
       {/* <ExprienceBubble></ExprienceBubble>
       <Project1Bubble></Project1Bubble>

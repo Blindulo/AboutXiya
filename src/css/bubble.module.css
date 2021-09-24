@@ -4,6 +4,8 @@
   word-wrap: break-word;
   width: 250px;
   z-index: 101;
+  /* user-select: none; */
+  cursor: pointer;
 }
 
 .back {
@@ -19,6 +21,7 @@
   height: 300px;
   left: 50%;
   z-index: 100;
+  cursor: pointer;
 }
 
 .academic1 {

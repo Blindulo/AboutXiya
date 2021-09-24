@@ -34,3 +34,7 @@
   height: 100px;
   width: 100%;
 }
+
+.nonDisplay {
+  display: none;
+}

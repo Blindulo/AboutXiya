@@ -1,22 +1,20 @@
-import * as React from "react";
-import { cover } from "../css/cover.module.css";
+import React, { Component, useState } from "react";
+import { coverDiv, cover } from "../css/cover.module.css";
 
-function test() {
-  //   alert(1);
-}
-const Cover = ({ children }) => {
-  // render() {
-  //     const { render } = this.state;
-  //     if (render === false) return null;
-  //     return (<div className={cover} onClick={test}>
-  //         {children}
-  //       </div>);
-  //   }
+function Cover(props) {
+  const [isActive, setActive] = useState(true);
+
+  const toggleClass = () => {
+    setActive(!isActive);
+  };
+
   return (
-    <div className={cover} onClick={test()}>
-      {children}
+    // <div className={coverDiv}>
+    <div className={isActive ? cover : props.class} onClick={toggleClass}>
+      <p>{props.text}</p>
+      {/* </div> */}
     </div>
   );
-};
+}
 
 export default Cover;
