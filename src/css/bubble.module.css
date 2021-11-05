@@ -37,10 +37,13 @@
 @keyframes academic1 {
   0%,
   100% {
-    transform: translate(-200%, 20%);
+    /* transform: translate(-200%, 20%);
+     */
+    top: 10px;
   }
   50% {
-    transform: translate(-200%, 25%);
+    /* transform: translate(-200%, 25%); */
+    top: 0px;
   }
 }
 

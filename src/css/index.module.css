@@ -15,6 +15,14 @@
   bottom: 400px;
   transform: translate(-50%, 0);
   width: 350px;
+  z-index: 2;
+}
+
+.drop {
+  position: absolute;
+  left: 60%;
+  transform: translate(-50%, 0);
+  bottom: 500px;
   z-index: 1;
 }
 
