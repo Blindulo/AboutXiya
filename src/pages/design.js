@@ -1,12 +1,16 @@
 import * as React from "react";
+import ReactTypingEffect from "react-typing-effect";
 import Layout from "../components/layout.js";
-import { StaticImage } from "gatsby-plugin-image";
-import { witch } from "../css/index.module.css";
+import { text } from "../css/design.module.css";
 
 const Design = () => {
   return (
     <Layout>
-      <StaticImage className={witch} src="../images/witch.png" />
+      <ReactTypingEffect
+        className={text}
+        text={"Hello."}
+        eraseDelay={100000000000}
+      />
     </Layout>
   );
 };
