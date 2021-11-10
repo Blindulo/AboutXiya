@@ -1,9 +1,10 @@
-const Resume = {
+const RESUME = {
   myName: "Xiya Liu",
   address: {
     street: "3438 23rd Ave W",
     city: "Seattle",
     state: "WA",
+    zipcode: "98199",
   },
   contact: {
     phone: "412-320-9709",
@@ -104,3 +105,5 @@ const Resume = {
     },
   ],
 };
+
+export const RESUMECONTENT = RESUME;
