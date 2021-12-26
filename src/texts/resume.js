@@ -48,12 +48,24 @@ const RESUME = {
   },
   experience: [
     {
+      company: "PlayStation",
+      title: "Software Engineer",
+      organization: "Sony Interactive Entertainment ",
+      time: {
+        start: "Nov. 2020",
+        end: "Present",
+      },
+      duty: [],
+      technology: "",
+      url: "",
+    },
+    {
       company: "University of Pittsburgh",
       title: "Web Developer",
       organization: "Pitt Educational and Language Technology Lab",
       time: {
         start: "Oct. 2020",
-        end: "Present",
+        end: "Dec. 2021",
       },
       duty: [
         "Developing and maintaining a NLP platform to assist instructors in Purdue University to analyze reflection words from students so that instructors could gain the reviews more timely and systematically.",

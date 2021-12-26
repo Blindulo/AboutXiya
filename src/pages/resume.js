@@ -1,11 +1,23 @@
-import * as React from "react";
+import React, { useState } from "react";
+import { StaticImage } from "gatsby-plugin-image";
+import { Link } from "gatsby";
 import Layout from "../components/layout.js";
 import { RESUMECONTENT } from "../texts/resume.js";
+import BlockBackText from "../components/blockBackText.js";
+import {
+  blockBack,
+  nameStyle,
+  contactStyle,
+  content,
+  title,
+  resumeContainer,
+  avatar,
+} from "../css/resume.module.css";
 
 function Title(props) {
   return (
     <div>
-      <div>{props.name}</div>
+      <div className={nameStyle}>{props.name}</div>
       {/* <Address address={props.address} /> */}
       <Contact contact={props.contact} />
     </div>
@@ -25,7 +37,7 @@ function Address(props) {
 
 function Contact(props) {
   return (
-    <div>
+    <div className={contactStyle}>
       <div>{props.contact.phone}</div>
       <div>{props.contact.email}</div>
     </div>
@@ -40,13 +52,13 @@ function Education(props) {
   educations.forEach((education) => {
     educationList.push(
       <ol>
-        <div>
+        <div className={title}>
           {education.university} - {education.address}
         </div>
-        <div>
+        <div className={content}>
           {education.degree} - {education.major}
         </div>
-        <div>
+        <div className={content}>
           {education.time.start} - {education.time.end}
         </div>
       </ol>
@@ -58,11 +70,23 @@ function Education(props) {
 function Skill(props) {
   return (
     <div>
-      <div>Programming Languages : {props.skill.programmingLanguages}</div>
-      <div>Application Development: {props.skill.applicationDevelopment}</div>
-      <div>Database Tools: {props.skill.databaseTools}</div>
-      <div>GitHub: {props.skill.links.gitHub}</div>
-      <div>LinkedIn: {props.skill.links.linkedIn}</div>
+      <div className={title}>Programming Languages:</div>
+      <div className={content}>{props.skill.programmingLanguages}</div>
+      <br />
+      <div className={title}>Application Development:</div>
+      <div className={content}>{props.skill.applicationDevelopment}</div>
+      <br />
+      <div className={title}>Database Tools:</div>
+      <div className={content}>{props.skill.databaseTools}</div>
+      <br />
+      <div className={title}>GitHub:</div>
+      <Link className={content} to={props.skill.links.gitHub}>
+        {props.skill.links.gitHub}
+      </Link>
+      <div className={title}>LinkedIn:</div>
+      <Link className={content} to={props.skill.links.linkedIn}>
+        {props.skill.links.linkedIn}
+      </Link>
     </div>
   );
 }
@@ -76,22 +100,25 @@ function Experience(props) {
     const duties = experience.duty;
     const dutyList = [];
     duties.forEach((duty) => {
-      dutyList.push(<ol>{duty}</ol>);
+      dutyList.push(<li>{duty}</li>);
     });
     experienceList.push(
       <ol>
-        <div>{experience.company}</div>
-        <div>{experience.title}</div>
-        <div>{experience.organization}</div>
-        <div>
+        <div className={title}>{experience.company}</div>
+        <div className={content}>{experience.title}</div>
+        <div className={content}>{experience.organization}</div>
+        <div className={content}>
           {experience.time.start} - {experience.time.end}
         </div>
-        <div>{dutyList}</div>
-        <div>{experience.technology}</div>
-        <div>{experience.url}</div>
-        <div>
+        <ul className={content}>{dutyList}</ul>
+        <div className={content}>Technology: {experience.technology}</div>
+        <Link className={content} to={experience.url}>
+          URL: {experience.url}
+        </Link>
+        {/* <div className={content}>
+          Test Account:&nbsp;&nbsp;
           {experience.test.account} - {experience.test.password}
-        </div>
+        </div> */}
       </ol>
     );
   });
@@ -107,36 +134,57 @@ function Project(props) {
     const duties = project.duty;
     const dutyList = [];
     duties.forEach((duty) => {
-      dutyList.push(<ol>{duty}</ol>);
+      dutyList.push(<li>{duty}</li>);
     });
-    projectList.push(
-      <ol>
-        <div>{project.projectName}</div>
-        <div>{project.detail}</div>
-        <div>{dutyList}</div>
-      </ol>
-    );
-    if (project.technology) {
-      projectList.push(
-        <ol>
-          <div>{project.technology}</div>
-        </ol>
-      );
-    }
     if (project.url) {
       projectList.push(
-        <ol>
-          <div>{project.url}</div>
-        </ol>
+        <ul>
+          <Link className={title} to={project.url}>
+            {project.projectName}
+          </Link>
+          {/* <div>{project.detail}</div> */}
+          <div className={content}>{dutyList}</div>
+        </ul>
+      );
+    } else {
+      projectList.push(
+        <ul>
+          <div className={title}>{project.projectName}</div>
+          {/* <div>{project.detail}</div> */}
+          <div className={content}>{dutyList}</div>
+        </ul>
       );
     }
+
+    // if (project.technology) {
+    //   projectList.push(<div className={content}>{project.technology}</div>);
+    // }
   });
   return <div>{projectList}</div>;
 }
 
+function Block({ name, children }) {
+  const [isDisplay, setDisplay] = useState({ display: "none" });
+
+  return (
+    <div
+      className={blockBack}
+      onMouseEnter={(e) => {
+        setDisplay({ display: "block" });
+      }}
+      onMouseLeave={(e) => {
+        setDisplay({ display: "none" });
+      }}
+    >
+      {children}
+      <BlockBackText style={isDisplay} name={name} />
+    </div>
+  );
+}
+
 const Resume = () => {
   return (
-    <Layout>
+    <Layout className={resumeContainer}>
       <div>
         <Title
           name={RESUMECONTENT.myName}
@@ -144,17 +192,24 @@ const Resume = () => {
           contact={RESUMECONTENT.contact}
         />
       </div>
-      <div>
+      <br />
+      <Block name="Education">
         <Education educations={RESUMECONTENT.education} />
-      </div>
-      <div>
+      </Block>
+      <br />
+      <Block name="Skills">
         <Skill skill={RESUMECONTENT.skill} />
-      </div>
-      <div>
+      </Block>
+      <br />
+      <Block name="Experience">
         <Experience experiences={RESUMECONTENT.experience} />
-      </div>
-      <div>
+      </Block>
+      <br />
+      <Block name="Projects">
         <Project projects={RESUMECONTENT.project} />
+      </Block>
+      <div className={avatar}>
+        <StaticImage src="../images/avatar.JPG" alt="avatar" />
       </div>
     </Layout>
   );

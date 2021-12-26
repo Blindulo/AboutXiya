@@ -1,0 +1,61 @@
+ol {
+  padding-left: 0;
+}
+ul {
+  list-style: none;
+  padding-left: 0;
+}
+
+ul li::before {
+  content: "\2022";
+  color: white;
+  font-weight: bold;
+  display: inline-block;
+  width: 1em;
+}
+
+.resumeContainer {
+  width: 600px;
+}
+.nameStyle {
+  font-size: 40px;
+  padding: 20px 20px;
+}
+
+.contactStyle {
+  width: 420px;
+  background-color: red;
+  font-size: 12px;
+  padding: 15px 20px;
+  text-align: right;
+  margin-left: 0px;
+}
+
+.title {
+  font-size: 18px;
+  padding-left: 20px;
+  text-decoration: none;
+  color: white;
+}
+
+.content {
+  overflow: auto;
+  font-size: 15px;
+  padding-left: 20px;
+  text-decoration: none;
+  color: white;
+}
+
+.avatar {
+  position: absolute;
+  top: 20px;
+  left: 500px;
+  width: 120px;
+}
+
+.blockBack:hover {
+  position: relative;
+  padding: 10px 0px;
+  background-color: #1c1c1c;
+  transform: scale(1.01);
+}
