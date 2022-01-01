@@ -1,8 +1,14 @@
-import * as React from "react";
-import { walk } from "../../css/yyw.module.css";
+import { editor } from "monaco-editor";
+import React from "react";
 
-const Walk = () => {
-  return <div className={walk}></div>;
+const Walk = (props) => {
+  return (
+    <div
+      className={props.class}
+      onMouseEnter={props.onMouseEnter}
+      onTransitionEnd={props.onTransitionEnd}
+    ></div>
+  );
 };
 
 export default Walk;

@@ -46,3 +46,36 @@
 .nonDisplay {
   display: none;
 }
+
+.display {
+  display: block;
+}
+
+.walkLefttoRight {
+  position: absolute;
+  width: 150px;
+  height: 120px;
+  bottom: 150px;
+  background-image: url("../images/yywWalk.png");
+  background-size: 100% 100%;
+  z-index: 105;
+  transition: transform 30s;
+  transform: translateX(calc(100vw - 150px));
+  animation-iteration-count: infinite;
+  /* transition-timing-function: steps(60, end); */
+}
+
+.walkRighttoLeft {
+  /* animation: walkRighttoLeftAnimation 60s infinite steps(60); */
+  /* -webkit-transform-origin: 100% 50%; */
+  position: absolute;
+  width: 150px;
+  height: 120px;
+  bottom: 150px;
+  background-image: url("../images/yywWalkReverse.png");
+  background-size: 100% 100%;
+  z-index: 105;
+  transition: transform 30s;
+  transform: translateX(0px);
+  animation-iteration-count: infinite;
+}

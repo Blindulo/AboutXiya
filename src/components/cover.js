@@ -1,18 +1,10 @@
-import React, { Component, useState } from "react";
-import { coverDiv, cover } from "../css/cover.module.css";
+import React from "react";
+import { cover } from "../css/cover.module.css";
 
 function Cover(props) {
-  const [isActive, setActive] = useState(true);
-
-  const toggleClass = () => {
-    setActive(!isActive);
-  };
-
   return (
-    // <div className={coverDiv}>
-    <div className={isActive ? cover : props.class} onClick={toggleClass}>
+    <div className={props.class + " " + cover} onClick={props.onClick}>
       <p>{props.text}</p>
-      {/* </div> */}
     </div>
   );
 }

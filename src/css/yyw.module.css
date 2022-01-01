@@ -1,29 +1,5 @@
-.walk {
-  position: absolute;
-  width: 150px;
-  height: 120px;
-  bottom: 150px;
-  background-image: url("../images/yywWalk.png");
-  background-size: 100% 100%;
-  animation: walk 60s infinite steps(60, start);
-  z-index: 105;
-}
-
-@keyframes walk {
-  0%,
-  100% {
-    left: 0;
-  }
-  50% {
-    left: 100%;
-  }
-}
-.walk:hover {
-  transform: rotateY(180deg);
-  /* animation: walkReverse 60s infinite steps(60, start); */
-}
-
-@keyframes walkReverse {
+/* 
+@keyframes walkRighttoLeftAnimation {
   0%,
   100% {
     left: 100%;
@@ -31,4 +7,4 @@
   50% {
     left: 0;
   }
-}
+} */

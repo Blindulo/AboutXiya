@@ -1,4 +1,4 @@
-import * as React from "react";
+import React, { useState } from "react";
 import Helmet from "react-helmet";
 
 import { StaticImage } from "gatsby-plugin-image";
@@ -20,13 +20,30 @@ import {
   window,
   footerDiv,
   nonDisplay,
+  display,
   drop,
+  walkLefttoRight,
+  walkRighttoLeft,
 } from "../css/index.module.css";
 
 const IndexPage = () => {
+  const [displayCover, setDisplayCover] = useState(true);
+  const [isLefttoRight, setDirection] = useState(true);
+  const hideCover = () => {
+    setDisplayCover(!displayCover);
+    setDirection(!isLefttoRight);
+  };
+  const setWalk = () => {
+    setDirection(!isLefttoRight);
+  };
+
   return (
     <div className={window}>
-      <Cover text="When Xiya was created..." class={nonDisplay}></Cover>
+      <Cover
+        text="When Xiya was created..."
+        class={displayCover ? display : nonDisplay}
+        onClick={hideCover}
+      ></Cover>
 
       <Academic1Bubble></Academic1Bubble>
 
@@ -49,7 +66,11 @@ const IndexPage = () => {
           <StaticImage src="../images/jar.png" alt="a jar" />
         </div>
       </Layout>
-      <Walk></Walk>
+      <Walk
+        class={isLefttoRight ? walkLefttoRight : walkRighttoLeft}
+        onMouseEnter={setWalk}
+        onTransitionEnd={setWalk}
+      ></Walk>
       <div className={footerDiv}>
         <Footer>
           <p>footer</p>
