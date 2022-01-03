@@ -52,12 +52,11 @@ const RESUME = {
       title: "Software Engineer",
       organization: "Sony Interactive Entertainment ",
       time: {
-        start: "Nov. 2020",
+        start: "Nov. 2021",
         end: "Present",
       },
       duty: [],
-      technology: "",
-      url: "",
+      technology: "React Native, TypeScript",
     },
     {
       company: "University of Pittsburgh",

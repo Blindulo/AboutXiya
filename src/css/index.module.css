@@ -23,7 +23,7 @@
   left: 60%;
   transform: translate(-50%, 0);
   bottom: 500px;
-  z-index: 1;
+  z-index: 10;
 }
 
 .jar {
@@ -59,7 +59,7 @@
   background-image: url("../images/yywWalk.png");
   background-size: 100% 100%;
   z-index: 105;
-  transition: transform 30s;
+  transition: transform 90s;
   transform: translateX(calc(100vw - 150px));
   animation-iteration-count: infinite;
   /* transition-timing-function: steps(60, end); */
@@ -75,7 +75,7 @@
   background-image: url("../images/yywWalkReverse.png");
   background-size: 100% 100%;
   z-index: 105;
-  transition: transform 30s;
+  transition: transform 90s;
   transform: translateX(0px);
   animation-iteration-count: infinite;
 }

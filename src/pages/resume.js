@@ -102,25 +102,44 @@ function Experience(props) {
     duties.forEach((duty) => {
       dutyList.push(<li>{duty}</li>);
     });
-    experienceList.push(
-      <ol>
-        <div className={title}>{experience.company}</div>
-        <div className={content}>{experience.title}</div>
-        <div className={content}>{experience.organization}</div>
-        <div className={content}>
-          {experience.time.start} - {experience.time.end}
-        </div>
-        <ul className={content}>{dutyList}</ul>
-        <div className={content}>Technology: {experience.technology}</div>
-        <Link className={content} to={experience.url}>
-          URL: {experience.url}
-        </Link>
-        {/* <div className={content}>
+    if (experience.url) {
+      experienceList.push(
+        <ol>
+          <div className={title}>{experience.company}</div>
+          <div className={content}>{experience.title}</div>
+          <div className={content}>{experience.organization}</div>
+          <div className={content}>
+            {experience.time.start} - {experience.time.end}
+          </div>
+          <ul className={content}>{dutyList}</ul>
+          <div className={content}>Technology: {experience.technology}</div>
+          <Link className={content} to={experience.url}>
+            URL: {experience.url}
+          </Link>
+          {/* <div className={content}>
           Test Account:&nbsp;&nbsp;
           {experience.test.account} - {experience.test.password}
         </div> */}
-      </ol>
-    );
+        </ol>
+      );
+    } else {
+      experienceList.push(
+        <ol>
+          <div className={title}>{experience.company}</div>
+          <div className={content}>{experience.title}</div>
+          <div className={content}>{experience.organization}</div>
+          <div className={content}>
+            {experience.time.start} - {experience.time.end}
+          </div>
+          <ul className={content}>{dutyList}</ul>
+          <div className={content}>Technology: {experience.technology}</div>
+          {/* <div className={content}>
+          Test Account:&nbsp;&nbsp;
+          {experience.test.account} - {experience.test.password}
+        </div> */}
+        </ol>
+      );
+    }
   });
   return <div>{experienceList}</div>;
 }
