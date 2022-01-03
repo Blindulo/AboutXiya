@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useCallback } from "react";
 import Helmet from "react-helmet";
 import { DndProvider } from "react-dnd";
 import { HTML5Backend } from "react-dnd-html5-backend";
@@ -15,10 +15,11 @@ import Project1Bubble from "../components/bubbles/project1.js";
 import Project2Bubble from "../components/bubbles/project2.js";
 import Project3Bubble from "../components/bubbles/project3.js";
 import Walk from "../components/yyw/walk.js";
-import DropTarget from "../components/dropTarget.js";
+import Dustbin from "../components/dropTarget.js";
 import { FOOTERCONTENT } from "../texts/footer.js";
+import Example from "../components/example.js";
 
-import Bubble from "../components/bubbles/bubble.js";
+import Box from "../components/bubbles/bubble.js";
 import {
   witch,
   jar,
@@ -30,15 +31,6 @@ import {
   walkLefttoRight,
   walkRighttoLeft,
 } from "../css/index.module.css";
-import {
-  back,
-  backImage,
-  academic1,
-  frontContent,
-  textAcademic1,
-  textAcademic2,
-  academic2,
-} from "../css/bubble.module.css";
 
 const IndexPage = () => {
   const [displayCover, setDisplayCover] = useState(true);
@@ -73,31 +65,10 @@ const IndexPage = () => {
         <div className={witch}>
           <StaticImage src="../images/witch.png" alt="a witch" />
         </div>
+
         <DndProvider backend={HTML5Backend}>
           <div className={drop}>
-            <Bubble
-              name="academic1"
-              frontClass={academic1 + " " + backImage}
-              textClass={frontContent + " " + textAcademic1}
-              bubbleText="University of Pittsburgh"
-              backClass={back + " " + textAcademic1}
-              backText1="Information Science"
-              backText2="Master's"
-              positionStyle={{ x: -600, y: 50 }}
-              isDrop="false"
-            />
-            <Bubble
-              name="academic2"
-              frontClass={academic2 + " " + backImage}
-              textClass={frontContent + " " + textAcademic2}
-              bubbleText="Nanjing University of Information Science and Technology"
-              backClass={back + " " + textAcademic2}
-              backText1="Computer Science and Technology"
-              backText2="Bachelor's"
-              positionStyle={{ x: 0, y: 50 }}
-              isDrop="false"
-            />
-            <DropTarget></DropTarget>
+            <Example />
           </div>
         </DndProvider>
 

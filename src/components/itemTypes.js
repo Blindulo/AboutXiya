@@ -1,3 +1,3 @@
 export const ItemTypes = {
-  BUBBLE: "bubble",
+  EDUCATION: "education",
 };
