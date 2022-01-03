@@ -1,11 +1,11 @@
 import * as React from "react";
-import { breakLine, footerText } from "../css/footer.module.css";
+import { breakLine, footerText, footerDiv } from "../css/footer.module.css";
 
-const Footer = ({ children }) => {
+const Footer = ({ text }) => {
   return (
-    <div>
+    <div className={footerDiv}>
       <div className={breakLine}></div>
-      <div className={footerText}>{children}</div>
+      <div className={footerText}>{text}</div>
     </div>
   );
 };

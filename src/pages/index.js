@@ -7,7 +7,6 @@ import { StaticImage } from "gatsby-plugin-image";
 
 import Cover from "../components/cover.js";
 import Layout from "../components/layout.js";
-import Footer from "../components/footer.js";
 import Academic1Bubble from "../components/bubbles/academic1.js";
 import Academic2Bubble from "../components/bubbles/academic2.js";
 import ExprienceBubble from "../components/bubbles/exprience.js";
@@ -15,19 +14,14 @@ import Project1Bubble from "../components/bubbles/project1.js";
 import Project2Bubble from "../components/bubbles/project2.js";
 import Project3Bubble from "../components/bubbles/project3.js";
 import Walk from "../components/yyw/walk.js";
-import Dustbin from "../components/dropTarget.js";
-import { FOOTERCONTENT } from "../texts/footer.js";
-import Example from "../components/example.js";
+import DragAndDrop from "../components/dragAndDrop.js";
 
-import Box from "../components/bubbles/bubble.js";
 import {
   witch,
   jar,
   window,
-  footerDiv,
   nonDisplay,
   display,
-  drop,
   walkLefttoRight,
   walkRighttoLeft,
 } from "../css/index.module.css";
@@ -67,9 +61,7 @@ const IndexPage = () => {
         </div>
 
         <DndProvider backend={HTML5Backend}>
-          <div className={drop}>
-            <Example />
-          </div>
+          <DragAndDrop />
         </DndProvider>
 
         <div className={jar}>
@@ -81,11 +73,6 @@ const IndexPage = () => {
         onMouseEnter={setWalk}
         onTransitionEnd={setWalk}
       ></Walk>
-      <div className={footerDiv}>
-        <Footer>
-          <p>footer</p>
-        </Footer>
-      </div>
     </div>
   );
 };

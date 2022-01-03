@@ -2,7 +2,10 @@ import React, { useState, useCallback, memo } from "react";
 import { Dustbin } from "../components/dropTarget.js";
 import { Box } from "../components/bubbles/bubble.js";
 import { ItemTypes } from "./ItemTypes";
+import Footer from "../components/footer.js";
 import update from "immutability-helper";
+
+import { FOOTERCONTENT } from "../texts/footer.js";
 import {
   back,
   backImage,
@@ -11,6 +14,7 @@ import {
   textAcademic1,
   textAcademic2,
   academic2,
+  drop,
 } from "../css/bubble.module.css";
 export const Container = memo(function Container() {
   const [dustbins, setDustbins] = useState([
@@ -66,47 +70,50 @@ export const Container = memo(function Container() {
   );
   return (
     <div>
-      <div style={{ overflow: "hidden", clear: "both" }}>
-        {dustbins.map(({ accepts, lastDroppedItem }, index) => (
-          <Dustbin
-            accept={accepts}
-            lastDroppedItem={lastDroppedItem}
-            onDrop={(item) => handleDrop(index, item)}
-            key={index}
-          />
-        ))}
-      </div>
-
-      <div style={{ overflow: "hidden", clear: "both" }}>
-        {boxes.map(
-          (
-            {
-              name,
-              type,
-              frontClass,
-              textClass,
-              bubbleText,
-              backClass,
-              backText1,
-              backText2,
-            },
-            index
-          ) => (
-            <Box
-              name={name}
-              type={type}
-              isDropped={isDropped(name)}
+      <div className={drop}>
+        <div>
+          {dustbins.map(({ accepts, lastDroppedItem }, index) => (
+            <Dustbin
+              accept={accepts}
+              lastDroppedItem={lastDroppedItem}
+              onDrop={(item) => handleDrop(index, item)}
               key={index}
-              frontClass={frontClass}
-              textClass={textClass}
-              bubbleText={bubbleText}
-              backClass={backClass}
-              backText1={backText1}
-              backText2={backText2}
             />
-          )
-        )}
+          ))}
+        </div>
+
+        <div>
+          {boxes.map(
+            (
+              {
+                name,
+                type,
+                frontClass,
+                textClass,
+                bubbleText,
+                backClass,
+                backText1,
+                backText2,
+              },
+              index
+            ) => (
+              <Box
+                name={name}
+                type={type}
+                isDropped={isDropped(name)}
+                key={index}
+                frontClass={frontClass}
+                textClass={textClass}
+                bubbleText={bubbleText}
+                backClass={backClass}
+                backText1={backText1}
+                backText2={backText2}
+              />
+            )
+          )}
+        </div>
       </div>
+      <Footer text={FOOTERCONTENT.education} />
     </div>
   );
 });

@@ -164,3 +164,11 @@
     transform: translateY(-15px);
   }
 }
+
+.drop {
+  position: absolute;
+  left: 60%;
+  transform: translate(-50%, 0);
+  bottom: 500px;
+  z-index: 10;
+}
