@@ -7,8 +7,6 @@ const Menus = () => {
       <Navigator menu="Design" link="/design" />
       <Navigator menu="Resume" link="/resume" />
       <Navigator menu="Animation" link="/" />
-
-      <Navigator menu="Home" link="/home-page" />
     </div>
   );
 };
